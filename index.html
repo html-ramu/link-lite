@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Lite – URL Shortener</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- DARK MODE TOPBAR -->
+<div class="topbar">
+    <button id="themeToggle">🌙 Dark Mode</button>
+</div>
+
+    <div class="container">
+
+        <h1>🔗 Link Lite</h1>
+        <p class="subtitle">Paste your long URL and get a short link</p>
+
+        <!-- ===== INPUT SECTION ===== -->
+        <div class="input-group">
+            <input
+                type="url"
+                id="longUrl"
+                placeholder="https://example.com/very/long/url"
+                autocomplete="off"
+            >
+            <button id="shortenBtn">Shorten</button>
+        </div>
+
+        <!-- ===== ERROR MESSAGE (hidden by default) ===== -->
+        <p id="errorMsg" class="error-msg hidden"></p>
+
+        <!-- ===== RESULT SECTION (hidden by default) ===== -->
+        <div id="result" class="result hidden">
+            <p class="result-label">✅ Your short URL is ready:</p>
+
+            <div class="short-url-box">
+                <input type="text" id="shortUrl" readonly>
+                <button id="copyBtn">Copy</button>
+            </div>
+
+            <!-- Shows the JSON line the user needs to add to links.json -->
+            <div class="json-hint">
+                <p>📝 Add this line to <code>links.json</code>:</p>
+                <code id="jsonLine"></code>
+            </div>
+        </div>
+
+        <!-- ===== SAVED LINKS HISTORY (from localStorage) ===== -->
+        <div id="historySection" class="history-section hidden">
+            <h3>🕓 Recent Short Links</h3>
+            <ul id="historyList"></ul>
+            <button id="clearHistoryBtn" class="clear-btn">Clear History</button>
+        </div>
+
+        <!-- ===== HOW TO USE ===== -->
+        <div class="instructions">
+            <h3>How to use:</h3>
+            <ol>
+                <li>Paste your long URL above and click <strong>Shorten</strong></li>
+                <li>Copy the short URL shown</li>
+                <li>Open <code>links.json</code> and add the line shown</li>
+                <li>Push to GitHub — your short link is now live!</li>
+            </ol>
+        </div>
+
+    </div><!-- end .container -->
+
+    <script src="script.js"></script>
+</body>
+</html>
