@@ -15,10 +15,8 @@ const statusEl = document.getElementById('status');
 // =============================================
 async function loadLinks() {
     try {
-        // Build absolute path to links.json
-        // This avoids path issues on GitHub Pages subfolders
-        const base = window.location.href.replace('redirect.html', '');
-        const response = await fetch(base + 'links.json');
+        // Fetch using a simple relative path
+        const response = await fetch('links.json');
 
         // If the file couldn't be loaded (e.g., 404)
         if (!response.ok) {
